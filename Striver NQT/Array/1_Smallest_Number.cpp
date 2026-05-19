@@ -1,30 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
+void smallestElement(vector<int>& arr)
 {
+    cout << *min_element(arr.begin(), arr.end());
+}
+
+int main(){
+
     string s;
-    getline(cin, s);
-    // Remove { } and ,
-    for(int i = 0; i < s.size(); i++)
-    {
-        if(s[i] == '{' || s[i] == '}' || s[i] == ',')
-        {
-            s[i] = ' ';
-        }
+    getline(cin,s);
+
+    if(s.front()=='[' && s.back()==']'){
+        s = s.substr(1,s.length()-2);
     }
-    vector<int> arr;
+
     stringstream ss(s);
-    int x;
-    while(ss >> x)
-    {
-        arr.push_back(x);
+    string temp;
+    vector<int> arr;
+
+    while(getline(ss,temp,',')){
+        arr.push_back(stoi(temp));
     }
-    int smallest = INT_MAX;
-    for(int i = 0; i < arr.size(); i++)
-    {
-        smallest = min(smallest, arr[i]);
-    }
-    cout << smallest;
+
+    smallestElement(arr);
+
     return 0;
 }

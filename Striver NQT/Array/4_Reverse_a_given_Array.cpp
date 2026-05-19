@@ -1,48 +1,34 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
+void reverseArray(vector<int>& arr)
 {
-    string s;
-    getline(cin, s);
-
-    // Remove { } and ,
-    for(int i = 0; i < s.size(); i++)
-    {
-        if(s[i] == '{' || s[i] == '}' || s[i] == ',')
-        {
-            s[i] = ' ';
-        }
-    }
-
-    vector<int> arr;
-    stringstream ss(s);
-
-    int x;
-
-    // Store integers into vector
-    while(ss >> x)
-    {
-        arr.push_back(x);
-    }
-
-    // Reverse array
     reverse(arr.begin(), arr.end());
 
-    // Print reversed array
-    cout << "{";
-
-    for(int i = 0; i < arr.size(); i++)
+    for(int x : arr)
     {
-        cout << arr[i];
+        cout << x << " ";
+    }
+}
 
-        if(i != arr.size() - 1)
-        {
-            cout << ",";
-        }
+int main(){
+
+    string s;
+    getline(cin,s);
+
+    if(s.front()=='[' && s.back()==']'){
+        s = s.substr(1,s.length()-2);
     }
 
-    cout << "}";
+    stringstream ss(s);
+    string temp;
+    vector<int> arr;
+
+    while(getline(ss,temp,',')){
+        arr.push_back(stoi(temp));
+    }
+
+    reverseArray(arr);
 
     return 0;
 }

@@ -1,83 +1,42 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
+void secondElement(vector<int>& arr)
 {
-    string s;
-    getline(cin, s);
+    sort(arr.begin(), arr.end());
 
-    // Remove [ ] and ,
-    for(int i = 0; i < s.size(); i++)
-    {
-        if(s[i] == '[' || s[i] == ']' || s[i] == ',')
-        {
-            s[i] = ' ';
-        }
-    }
+    arr.erase(unique(arr.begin(), arr.end()), arr.end());
 
-    vector<int> arr;
-    stringstream ss(s);
-
-    int x;
-
-    // Store integers into vector
-    while(ss >> x)
-    {
-        arr.push_back(x);
-    }
-
-    // If array size less than 2
     if(arr.size() < 2)
     {
         cout << "Second Smallest : -1" << endl;
         cout << "Second Largest : -1";
-        return 0;
+        return;
     }
 
-    int smallest = INT_MAX;
-    int secondSmallest = INT_MAX;
+    cout << "Second Smallest : " << arr[1] << endl;
 
-    int largest = INT_MIN;
-    int secondLargest = INT_MIN;
+    cout << "Second Largest : " << arr[arr.size()-2];
+}
 
-    for(int i = 0; i < arr.size(); i++)
-    {
-        // Second Smallest
-        if(arr[i] < smallest)
-        {
-            secondSmallest = smallest;
-            smallest = arr[i];
-        }
-        else if(arr[i] != smallest && arr[i] < secondSmallest)
-        {
-            secondSmallest = arr[i];
-        }
+int main(){
 
-        // Second Largest
-        if(arr[i] > largest)
-        {
-            secondLargest = largest;
-            largest = arr[i];
-        }
-        else if(arr[i] != largest && arr[i] > secondLargest)
-        {
-            secondLargest = arr[i];
-        }
+    string s;
+    getline(cin,s);
+
+    if(s.front()=='[' && s.back()==']'){
+        s = s.substr(1,s.length()-2);
     }
 
-    // If second smallest/largest not found
-    if(secondSmallest == INT_MAX)
-    {
-        secondSmallest = -1;
+    stringstream ss(s);
+    string temp;
+    vector<int> arr;
+
+    while(getline(ss,temp,',')){
+        arr.push_back(stoi(temp));
     }
 
-    if(secondLargest == INT_MIN)
-    {
-        secondLargest = -1;
-    }
-
-    cout << "Second Smallest : " << secondSmallest << endl;
-    cout << "Second Largest : " << secondLargest;
+    secondElement(arr);
 
     return 0;
 }

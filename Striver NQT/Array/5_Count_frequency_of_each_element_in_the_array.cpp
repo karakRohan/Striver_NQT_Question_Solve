@@ -1,44 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
+void frequency(vector<int>& arr)
 {
-    string s;
-    getline(cin, s);
-
-    // Remove { } and ,
-    for(int i = 0; i < s.size(); i++)
-    {
-        if(s[i] == '{' || s[i] == '}' || s[i] == ',')
-        {
-            s[i] = ' ';
-        }
-    }
-
-    vector<int> arr;
-    stringstream ss(s);
-
-    int x;
-
-    // Store integers into vector
-    while(ss >> x)
-    {
-        arr.push_back(x);
-    }
-
-    map<int,int> freq;
-
-    // Count frequency
     for(int i = 0; i < arr.size(); i++)
     {
-        freq[arr[i]]++;
+        if(count(arr.begin(), arr.begin()+i, arr[i]) == 0)
+        {
+            cout << arr[i] << " "
+                 << count(arr.begin(), arr.end(), arr[i]) << endl;
+        }
+    }
+}
+
+int main(){
+
+    string s;
+    getline(cin,s);
+
+    if(s.front()=='[' && s.back()==']'){
+        s = s.substr(1,s.length()-2);
     }
 
-    // Print frequency
-    for(auto it : freq)
-    {
-        cout << it.first << " " << it.second << endl;
+    stringstream ss(s);
+    string temp;
+    vector<int> arr;
+
+    while(getline(ss,temp,',')){
+        arr.push_back(stoi(temp));
     }
+
+    frequency(arr);
 
     return 0;
 }
