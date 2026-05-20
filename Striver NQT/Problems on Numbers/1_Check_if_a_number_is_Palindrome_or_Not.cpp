@@ -1,14 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void palindrome(string s)
+void palindrome(int n)
 {
-    string temp = s;
+    string s = to_string(n);
 
-    reverse(temp.begin(), temp.end());
+    string rev = s;
 
-    cout << (s == temp ? "Palindrome Number"
-                       : "Not Palindrome");
+    reverse(rev.begin(), rev.end());
+
+    cout << (s == rev ? "Palindrome Number"
+                      : "Not Palindrome");
 }
 
 int main(){
@@ -16,7 +18,19 @@ int main(){
     string s;
     getline(cin,s);
 
-    palindrome(s);
+    vector<int> arr;
+
+    stringstream ss(s);
+
+    string temp;
+
+    while(getline(ss,temp,' ')){
+        arr.push_back(stoi(temp));
+    }
+
+    for(int ans : arr){
+        palindrome(ans);
+    }
 
     return 0;
 }
