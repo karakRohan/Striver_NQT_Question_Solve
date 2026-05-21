@@ -13,6 +13,7 @@ void primeNumber(int n)
     cout << (c == 2 ? "True" : "False");
 }
 
+
 int main(){
 
     string s;
