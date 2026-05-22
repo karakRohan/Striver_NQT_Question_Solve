@@ -14,6 +14,7 @@ void primeNumber(int n)
 }
 
 
+
 int main(){
 
     string s;
