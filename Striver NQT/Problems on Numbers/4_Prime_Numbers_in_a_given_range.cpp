@@ -31,6 +31,7 @@ void primeRange(int a, int b)
     cout << "]";
 }
 
+
 int main(){
     string s;
     getline(cin,s);
