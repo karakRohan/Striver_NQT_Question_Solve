@@ -39,8 +39,6 @@ int main(){
             arr.push_back(num);
         }
     }
-
     rearrange(arr);
-
     return 0;
 }
