@@ -14,8 +14,7 @@ void movezero(vector<int>& arr)
         }
     }
 
-    for(int x : arr)
-        cout << x << " ";
+    for(int x : arr) cout << x << " ";
 }
 
 int main()
