@@ -11,7 +11,6 @@ void maxMinDigit(int n)
 }
 
 
-
 int main(){
     string s;
     getline(cin,s);
