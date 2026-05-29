@@ -10,6 +10,8 @@ void maxMinDigit(int n)
         << *min_element(s.begin(),s.end())-'0';
 }
 
+
+
 int main(){
     string s;
     getline(cin,s);
