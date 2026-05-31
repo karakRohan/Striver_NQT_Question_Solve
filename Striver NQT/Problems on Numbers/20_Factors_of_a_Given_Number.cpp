@@ -9,6 +9,7 @@ void factors(int n)
     }
 }
 
+
 int main(){
     string s;
     getline(cin,s);
