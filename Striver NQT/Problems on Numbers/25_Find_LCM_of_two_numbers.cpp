@@ -6,6 +6,7 @@ void lcmNumber(int a, int b)
     cout << (a*b)/__gcd(a,b);
 }
 
+
 int main(){
     string s;
     getline(cin,s);
