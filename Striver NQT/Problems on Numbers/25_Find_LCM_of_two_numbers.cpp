@@ -7,6 +7,7 @@ void lcmNumber(int a, int b)
 }
 
 
+
 int main(){
     string s;
     getline(cin,s);
