@@ -10,6 +10,7 @@ void automorphic(int n)
             "Not Automorphic Number");
 }
 
+
 int main(){
     string s;
     getline(cin,s);
