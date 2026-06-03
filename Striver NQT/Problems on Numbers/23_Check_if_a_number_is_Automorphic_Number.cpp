@@ -11,6 +11,7 @@ void automorphic(int n)
 }
 
 
+
 int main(){
     string s;
     getline(cin,s);
