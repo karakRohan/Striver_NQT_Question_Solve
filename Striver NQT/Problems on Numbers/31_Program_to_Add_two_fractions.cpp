@@ -10,7 +10,6 @@ void addFraction(int n1,int d1,int n2,int d2)
 }
 
 
-
 int main(){
     string s;
     getline(cin,s);
