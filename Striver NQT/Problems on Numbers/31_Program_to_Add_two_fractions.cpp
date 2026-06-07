@@ -9,6 +9,7 @@ void addFraction(int n1,int d1,int n2,int d2)
     cout<<n/g<<" "<<d/g;
 }
 
+
 int main(){
     string s;
     getline(cin,s);
