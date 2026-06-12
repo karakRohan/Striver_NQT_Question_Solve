@@ -14,6 +14,7 @@ void firstOccurrence(vector<int>& arr, int target)
 }
 
 
+
 int main(){
     string s;
     getline(cin,s);
