@@ -13,6 +13,8 @@ void firstOccurrence(vector<int>& arr, int target)
     cout<<-1;
 }
 
+
+
 int main(){
     string s;
     getline(cin,s);
