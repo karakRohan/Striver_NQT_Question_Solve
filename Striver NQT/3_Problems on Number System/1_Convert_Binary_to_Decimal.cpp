@@ -7,6 +7,7 @@ void binaryToDecimal(string s)
 }
 
 
+
 int main(){
     string s;
     getline(cin,s);
