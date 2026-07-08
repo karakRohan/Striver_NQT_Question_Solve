@@ -6,6 +6,8 @@ void binaryToDecimal(string s)
     cout << stoi(s, 0, 2);
 }
 
+
+
 int main(){
     string s;
     getline(cin,s);
