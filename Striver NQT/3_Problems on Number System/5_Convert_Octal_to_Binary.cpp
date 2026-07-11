@@ -9,6 +9,7 @@ void octalToBinary(string s)
     }
 }
 
+
 int main(){
 
     string s;
