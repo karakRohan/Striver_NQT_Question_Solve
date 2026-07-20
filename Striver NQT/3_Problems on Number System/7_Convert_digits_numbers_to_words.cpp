@@ -11,7 +11,6 @@ void words(int n){
     if(n) cout<<a[n];
 }
 
-
 int main(){
 
     string s;
