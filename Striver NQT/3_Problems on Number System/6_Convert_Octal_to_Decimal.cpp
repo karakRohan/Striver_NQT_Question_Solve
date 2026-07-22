@@ -6,7 +6,6 @@ void octalToDecimal(string s)
     cout << stoi(s,0,8);
 }
 
-
 int main(){
     string s;
     getline(cin,s);
